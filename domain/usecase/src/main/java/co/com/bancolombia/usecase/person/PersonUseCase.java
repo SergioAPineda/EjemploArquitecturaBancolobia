@@ -14,7 +14,7 @@ public class PersonUseCase {
         return serviceGateway.getPerson(id);
     }
 
-    public Mono<Person> createPerson(Double balance){
-        return serviceGateway.createPerson(balance);
+    public Mono<Void> createPerson(Double balance){
+        return serviceGateway.createPerson(balance).thenReturn(null);
     }
 }

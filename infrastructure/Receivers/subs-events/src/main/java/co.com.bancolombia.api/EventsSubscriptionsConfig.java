@@ -19,13 +19,12 @@ import static org.reactivecommons.async.api.HandlerRegistry.register;
 public class EventsSubscriptionsConfig {
 
     private final PersonUseCase personUseCase;
-
+    private static final String CREATE_PERSON = "create.person";
     @Bean
     public HandlerRegistry eventSubscriptions() {
-        return register()
-                .listenEvent(UPDATE_PRICE_EVENT_RETRY, event -> updatePriceController
-                                .updatePriceOMS(parserDataToEntity
-                                        .transactionReceiverDataToTransactionReceiver(event.getData())),
-                        TransactionReceiverData.class);
+        return register().listenEvent(CREATE_PERSON, event -> personUseCase.createPerson(event.getData().getBalance()),
+                        PersonDTO.class);
     }
+
+
 }

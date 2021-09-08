@@ -1,6 +1,12 @@
 server:
   port: 8080
 spring:
+  rabbitmq:
+    host: "localhost:5888"
+    port: "5672"
+    username: "guest"
+    password: "guest"
+    virtual-host: "/"
   application:
     name: "dojoCA"
   devtools:

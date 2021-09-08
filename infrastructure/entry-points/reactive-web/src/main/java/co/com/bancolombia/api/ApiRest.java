@@ -19,11 +19,11 @@ public class ApiRest {
       return useCase.getPerson(id);
     }
 
-    @PostMapping(path = "/")
+/*    @PostMapping(path = "/")
     public Mono<Person> savePerson(@RequestBody Person person) {
         System.out.println("datos del balance ");
         Double balance = person.getBalance();
         return useCase.createPerson(balance);
 
-    }
+    }*/
 }
