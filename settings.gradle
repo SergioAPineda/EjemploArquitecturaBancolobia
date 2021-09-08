@@ -1,0 +1,16 @@
+rootProject.name = 'dojoCA'
+
+include ':app-service'
+include ':model'
+include ':usecase'
+project(':app-service').projectDir = file('./applications/app-service')
+project(':model').projectDir = file('./domain/model')
+project(':usecase').projectDir = file('./domain/usecase')
+include ':reactive-web'
+project(':reactive-web').projectDir = file('./infrastructure/entry-points/reactive-web')
+include ':sofk-service'
+project(':sofk-service').projectDir = file('./infrastructure/driven-adapters/sofk-service')
+include ':mongo-repository'
+project(':mongo-repository').projectDir = file('./infrastructure/driven-adapters/mongo-repository')
+include ':subs-events'
+project(':subs-events').projectDir = file('./infrastructure/Receivers/subs-events')
